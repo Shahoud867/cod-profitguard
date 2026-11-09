@@ -4,6 +4,8 @@ An operational, Pakistan-first **synthetic COD SaaS demo**, with a React/TypeScr
 
 No paid service, live courier account, store subscription, messaging provider or AI key is required. This is a local demonstration, not a production shipping or payments service. Every customer, merchant, courier, rate and outcome is fictional.
 
+**New to the idea?** Download [the single-page startup overview](startup-overview.html) and open it in a browser. It explains the idea, the software helpers, customers, market-size assumptions, connected delivery choices, value and business model in plain language. The HTML file works offline and can be printed or saved as a PDF.
+
 ![COD ProfitGuard command center](docs/dashboard-desktop.png)
 
 ## Start
