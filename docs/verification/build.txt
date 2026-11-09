@@ -1,0 +1,14 @@
+
+> cod-profitguard-web@1.0.0 build
+> tsc -b && vite build
+
+vite v6.4.5 building for production...
+transforming...
+✓ 1995 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.65 kB │ gzip:   0.41 kB
+dist/assets/index-zABc_nKh.css   48.35 kB │ gzip:  11.37 kB
+dist/assets/index-CRVj2ORS.js   261.98 kB │ gzip:  78.90 kB
+dist/assets/charts-DsLN3pYh.js  418.46 kB │ gzip: 115.13 kB
+✓ built in 3.65s

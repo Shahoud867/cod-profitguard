@@ -1,0 +1,69 @@
+
+> cod-profitguard-web@1.0.0 test:e2e
+> playwright test
+
+[WebServer] (node:17593) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] INFO:     Started server process [17522]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] 5:44:17 PM [vite] http proxy error: /api/health
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8000
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 5:44:18 PM [vite] http proxy error: /api/health
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8000
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 5:44:19 PM [vite] http proxy error: /api/health
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8000
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 5:44:20 PM [vite] http proxy error: /api/health
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8000
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 5:44:21 PM [vite] http proxy error: /api/health
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8000
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 5:44:22 PM [vite] http proxy error: /api/health
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8000
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 5:44:23 PM [vite] http proxy error: /api/health
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8000
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 5:44:24 PM [vite] http proxy error: /api/health
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8000
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 5:44:25 PM [vite] http proxy error: /api/health
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8000
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 5:44:26 PM [vite] http proxy error: /api/health
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8000
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 5:44:27 PM [vite] http proxy error: /api/health
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8000
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 5:44:28 PM [vite] http proxy error: /api/health
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8000
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 5:44:29 PM [vite] http proxy error: /api/health
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8000
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 5:44:30 PM [vite] http proxy error: /api/health
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8000
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+
+Running 10 tests using 1 worker
+
+(node:20479) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 e2e/workflows.spec.ts:8:1 › dashboard and all fourteen views render from API records (7.5s)
+  ✓   2 e2e/workflows.spec.ts:13:1 › CSV validation reports result and search opens timeline (3.6s)
+  ✓   3 e2e/workflows.spec.ts:17:1 › create verify compare and approve a synthetic shipment (3.9s)
+  ✓   4 e2e/workflows.spec.ts:22:1 › allocation runs 100 orders with separate approval and persists booking (3.8s)
+  ✓   5 e2e/workflows.spec.ts:25:1 › NDR rescue records permission and retry costs (5.0s)
+  ✓   6 e2e/workflows.spec.ts:28:1 › finance import and discrepancy review stays functional (3.9s)
+  ✓   7 e2e/workflows.spec.ts:31:1 › remaining lab scenarios execute and agent evidence expands (5.9s)
+  ✓   8 e2e/workflows.spec.ts:34:1 › viewer role has read access and disabled operational controls (2.2s)
+  ✓   9 e2e/workflows.spec.ts:37:1 › mobile navigation, tables and order drawer fit the viewport (2.6s)
+  ✓  10 e2e/workflows.spec.ts:40:1 › capture desktop and mobile deliverable previews (2.8s)
+
+  10 passed (58.5s)

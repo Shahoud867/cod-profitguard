@@ -1,0 +1,11 @@
+{
+  "orders": 10000,
+  "seed_seconds": 18.506,
+  "query_rows": 1000,
+  "query_median_ms": 19.525,
+  "query_max_ms": 54.272,
+  "optimization_100_seconds": 0.152,
+  "optimization_assigned": 100,
+  "checksum": "50dbeb8c512c3b58a479d798494cdabafeca65a76a1f36ecc0316be821bb4dbe",
+  "note": "This executor only; API/network/browser latency excluded from SQL query benchmark."
+}

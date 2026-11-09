@@ -1,0 +1,8 @@
+orders 8000
+customers 8000
+couriers 8
+events 59679
+order_items 8000
+agent_runs 23295
+statements 380
+Integrity OK. PG-1 checksum: 818b28198b7d8ab564f3c64693fde342d084c2ff6ce201d61c6eeaed88a4881b
