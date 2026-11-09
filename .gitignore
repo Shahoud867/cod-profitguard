@@ -1,0 +1,17 @@
+.venv/
+node_modules/
+.env
+*.db
+*.db-wal
+*.db-shm
+__pycache__/
+.pytest_cache/
+*.pyc
+*.tsbuildinfo
+apps/web/test-results/
+apps/web/playwright-report/
+
+# Reproducible frontend output is built locally.
+apps/web/dist/
+# Archive-specific metadata is generated for packaged releases.
+RELEASE_MANIFEST.json
