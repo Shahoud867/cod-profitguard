@@ -1,0 +1,28 @@
+# Moving from a local simulation to an authorized pilot
+
+The shipped system has no live providers or paid keys. `app/connectors.py` defines a narrow typed courier boundary; deterministic simulation outcomes enter the same state-machine, audit and finance services as operator-injected events. CSV inputs are functional today. Provider adapters propose typed events; they must never bypass tenant permissions, approval, deduplication or ledger validation.
+
+| Integration | Implementation approach | Operational requirements | Potential costs |
+|---|---|---|---|
+| Pakistani couriers | Implement provider authentication, rate/serviceability lookup, booking proposal, approved booking, tracking webhook normalization and remittance ingestion. Map provider references to tenant/order IDs. Store raw evidence securely. | Authorized merchant contract, current rate cards, documented API access, webhook signature validation, cancellation/return rules, event ordering and idempotency, settlement SLA. | Carrier transport/COD/RTO fees, negotiated API or aggregator charges, support and integration maintenance. No live courier rates are asserted by this demo. |
+| Shopify | OAuth app and tenant-store membership; signed webhooks ingest external IDs through the validated intake service. Maintain event receipts and replay protection. | Merchant authorization, app review/distribution rules, order scope minimization, uninstall/token-revocation lifecycle. | Merchant plan, possible app infrastructure and maintenance; no subscription is needed for this demo. |
+| WooCommerce | Merchant-issued scoped credentials or a verified plugin; signed webhook or CSV export; stable store/order deduplication. | Merchant-owned WordPress site, supported plugin/version, least-privilege keys, retry/dead-letter handling. | Existing hosting, maintenance and implementation; provider-specific fees require confirmation. |
+| WhatsApp | Official template/opt-in messaging adapter produces a contact proposal. Human approval and current consent precede the send. Provider delivery/response receipts become verification events. | Valid business account, approved templates, consent evidence, opt-outs, language review, rate limits and data-processing agreements. | Provider/category/country-specific message and business-service-provider charges. Check current official pricing. |
+| SMS / voice | Official provider with permission-checked contact proposals and callback normalization. No automatic fraud label from silence. | Verified consent, sender registration where required, suppression list, customer support and failure tracking. | Per-message/minute fees, registration, support; not simulated savings. |
+| Courier payments / bank feeds | Read-only statement adapter first. Reconcile by exact booking/reference/currency/fees; retain mismatches for finance. Payment initiation is a separately authorized future system. | Merchant-controlled statements, appropriate bank/provider permissions, accountant-approved ledger mapping, independent cash evidence. | Bank/provider fees, secure hosting and audit operations. |
+| Real risk calibration | Start with merchant-approved historical labels, temporal holdout and baseline rules. Evaluate contribution per placed order, false holds, delivered volume and subgroup error. | Sufficient lawful records, outcome definitions, missing-data analysis, selection-bias controls and matched/randomized supervised pilot. | Analyst/engineering effort, secure storage and ongoing monitoring. No synthetic-trained accuracy claim is supported. |
+
+## Required architectural upgrades
+
+- Replace exposed demo credentials and the account picker with production identity provisioning, role administration and recovery. Use HTTPS Secure cookies and carefully reviewed CSRF/origin settings.
+- Migrate SQLite to PostgreSQL with composite tenant foreign keys, row-level access policy, transaction locking and migration rehearsals. Add encrypted backups and restoration drills.
+- Replace the manually drained single-worker demo job runner with a leased durable queue, bounded retries, dead-letter review and alerting. Verify webhook signatures and provider idempotency guarantees.
+- Expand historical rate cards to dated merchant contracts, zones, weight bands, surcharges, taxes, service windows, allocation minimums and measured settlement fees. Unknown rates remain ineligible for optimization.
+- Add retention execution, full data-subject workflows, encryption/key management, privacy review and deletion policies. The demo’s declared retention setting does not schedule automatic deletion. Audit text may contain operational evidence and requires a production redaction/retention design.
+- Verify current legal, tax, COD cash-limit and messaging requirements for each real merchant. The demo uses the blueprint’s explicit policy limit as an example; it is not legal advice or a regulatory compliance service.
+
+## Measuring operational benefit
+
+Prespecify an authorized pilot: compare matched or randomized cohorts with the merchant’s actual routing, record all held/cancelled/placed orders, invoices, customer outcomes and payout timing, and include intervention labor and false-hold opportunity costs. Measure contribution **per placed COD order**, delivered volume, actual shipping and exception costs, customer experience and payout discrepancies. Do not add overlapping “verification savings” and “routing savings.” A lower RTO rate alone can reflect lost good orders.
+
+Strategic courier behavior, bargaining and volume-discount negotiation are future mechanisms, not a claimed Nash equilibrium in this MVP. The operational mechanism here is constrained cost allocation with an explicit optional capacity-balancing penalty.
